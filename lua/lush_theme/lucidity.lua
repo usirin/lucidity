@@ -78,7 +78,7 @@ local theme = lush(function()
     -- or leave them commented to apply vims default colouring or linking.
 
     Normal       { fg = _cloud, bg = _rock_dark }, -- normal text
-		Darker       { fg = _gray, bg = _rock_dark },
+    Darker       { fg = _gray, bg = _rock_dark },
     ColorColumn  { fg = _rock_dark, bg = _rock }, -- used for the columns set with 'colorcolumn'
     Conceal      { fg = _sap, bg = "bold"}, -- placeholder characters substituted for concealed text (see 'conceallevel')
     CursorLine   { bg = _rock }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
@@ -105,28 +105,28 @@ local theme = lush(function()
     Visual       { fg = _rock_dark, bg = _sap}, -- Visual mode selection
     WarningMsg   { fg = _rock_dark, bg = _steel}, -- warning messages
 
-		Access       { fg = _purple, gui = 'bold' },
+    Access       { fg = _purple, gui = 'bold' },
     Comment      { fg = _gray_dark }, -- any comment
-		Class        { fg = _pink },
+    Class        { fg = _pink },
     Conditional  { fg = _cyan }, --  if, then, else, endif, switch, etc.
     Constant     { fg = _turquoise, gui = "bold" }, -- (preferred) any constant
     Delimiter    { fg = _pink }, --  character that needs attention
     Identifier   { fg = _sky }, -- (preferred) any variable name
     Function     { fg = _steel }, -- function name (also: methods for classes)
-		Module       { fg = _pink, gui = "underline" },
+    Module       { fg = _pink, gui = "underline" },
     NonText      { fg = _gray_dark }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Number       { fg = _steel },
-		PreProc      { fg = _pink },
-		Statement    { fg = _pink },
-		Special      { fg = _turquoise },
-		SpecialKey   { fg = _gray_light },
-		String       { fg = _fluoric },
-		StorageClass { fg = _purple },
-		Structure    { fg = _purple },
-		Symbol       { fg = _sky },
-		Type         { fg = _steel },
-		Underlined   { fg = _turquoise, gui = "underline" },
-		Userdef      { fg = _sap },
+    Number       { fg = _steel },
+    PreProc      { fg = _pink },
+    Statement    { fg = _pink },
+    Special      { fg = _turquoise },
+    SpecialKey   { fg = _gray_light },
+    String       { fg = _fluoric },
+    StorageClass { fg = _purple },
+    Structure    { fg = _purple },
+    Symbol       { fg = _sky },
+    Type         { fg = _steel },
+    Underlined   { fg = _turquoise, gui = "underline" },
+    Userdef      { fg = _sap },
 
     Boolean        { Number    },
     Character      { Function  },
@@ -145,6 +145,26 @@ local theme = lush(function()
     SpecialComment { Special   },
     Typedef        { Type      },
     Tag            { Special   },
+
+    TabLine      { bg = _rock_dark, fg = _rock_medium}, -- tab pages line, not active tab page label
+    TabLineFill  { bg = _rock_dark}, -- tab pages line, where there are no labels
+    TabLineSel   { bg = _rock.lighten(5)}, -- tab pages line, active tab page label
+
+    StartifyNumber   { Statement     },
+    StartifyBracket  { Statement     },
+    StartifySection  { Title         },
+    StartifyPath     { Comment       },
+    StartifySlash    { Comment       },
+    StartifyFile     { StorageClass  },
+
+    GitSignsAdd          { fg = _turquoise, bg = _rock_dark},
+    GitSignsChange       { fg = _sap, bg = _rock_dark },
+    GitSignsDelete       { fg = _pink, bg = _rock_dark },
+    GitSignsChangeDelete { fg = _pink, bg = _rock_dark },
+
+    DiffAdd          { fg = _turquoise, bg = _rock_dark},
+    DiffChange       { fg = _sap, bg = _rock_dark },
+    DiffDelete       { fg = _pink, bg = _rock_dark },
 
 
 
@@ -173,9 +193,6 @@ local theme = lush(function()
     -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    -- TabLine      { }, -- tab pages line, not active tab page label
-    -- TabLineFill  { }, -- tab pages line, where there are no labels
-    -- TabLineSel   { }, -- tab pages line, active tab page label
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
